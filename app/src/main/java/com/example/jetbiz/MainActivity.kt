@@ -79,10 +79,6 @@ fun CreateBizCard() {
                 }
                 if (buttonClickState.value) {
                     CreateList()
-                } else {
-                    Box() {
-
-                    }
                 }
             }
         }
@@ -112,12 +108,13 @@ private fun CreateProfileContainer() {
 @Composable
 private fun CreateProfileInfo() {
     Text(
-        text = "Aline Jolina",
+        text = "Eren Jaeger",
         color = MaterialTheme.colors.primary,
         fontSize = 30.sp
     )
-    Text(text = "caradehuelepedo@gmail.com")
-    Text(text = "47077696969")
+    Text(text = "If You Don't Fight, You Can't Win!")
+    Spacer(modifier = Modifier.padding(top = 5.dp))
+    Text(text = "4freedom@gmail.com")
 }
 
 @Composable
@@ -134,34 +131,7 @@ private fun CreateList() {
             shape = RoundedCornerShape(corner = CornerSize(5.dp)),
             border = BorderStroke(width = 2.dp, color = Color.Blue)
         ) {
-            Portfolio(data = listOf("HP Omen", "Fire with Fire", "Nike", "I don't know!", "Taco Taco"))
-        }
-    }
-}
-
-@Composable
-fun Portfolio(data: List<String>) {
-    LazyColumn(horizontalAlignment = Alignment.CenterHorizontally, modifier = Modifier.padding(top = 10.dp)) {
-        items(data) { i ->
-            Surface(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .height(160.dp)
-                    .padding(10.dp),
-                border = BorderStroke(width = 1.dp, color = Color.DarkGray)
-            ) {
-                Column(horizontalAlignment = Alignment.CenterHorizontally) {
-                    Text(
-                        text = i,
-                        textAlign = TextAlign.Center,
-                        fontSize = 28.sp,
-                        modifier = Modifier.padding(top = 5.dp)
-                    )
-                    Text("Some other text 1", modifier = Modifier.padding(top = 2.dp, bottom = 5.dp))
-                    Text("Some other text 2", modifier = Modifier.padding(top = 2.dp, bottom = 5.dp))
-                    Text("Some other text 3", modifier = Modifier.padding(top = 2.dp, bottom = 5.dp))
-                }
-            }
+            Portfolio(data = listOf("Some text", "Drink water", "Caiques are the best", "I don't know!", "Bla bla bla"))
         }
     }
 }
@@ -170,7 +140,6 @@ fun Portfolio(data: List<String>) {
 @Composable
 fun DefaultPreview() {
     JetBizTheme {
-        //CreateBizCard()
-        CreateList()
+        CreateBizCard()
     }
 }
